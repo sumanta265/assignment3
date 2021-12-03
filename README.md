@@ -48,7 +48,29 @@ None keyword is used to define a null variable or object.
 None keyword is immutable.
 
 
-11)
+11)def spam():
+      eggs = 99
+      bacon()
+   print(eggs)
+
+  def bacon():
+      ham = 101
+      eggs = 0
+
+ spam()
+ When the program starts, the spam() function is called , and a local scope is created. The local variable eggs  is set to 99. Then the bacon() function is called , and a second local scope is created. Multiple local scopes can exist at the same time. In this new local scope, the local variable ham is set to 101, and a local variable eggs—which is different from the one in spam()’s local scope—is also created  and set to 0.
+
+When bacon() returns, the local scope for that call is destroyed. The program execution continues in the spam() function to print the value of eggs , and since the local scope for the call to spam() still exists here, the eggs variable is set to 99. This is what the program prints.
+
+12) Prevents program from crashing if an error occurs
+If an error occurs in a program, we don’t want the program to unexpectedly crash on the user. Instead, error handling can be used to notify the user of why the error occurred and gracefully exit the process that caused the error.
+
+13)The try except statement can handle exceptions. Exceptions may happen when we run a program.
+Exceptions are errors that happen during execution of the program. Python won’t tell us about errors like syntax errors (grammar faults), instead it will abruptly stop.
+An abrupt exit is bad for both the end user and developer.
+Instead of an emergency halt, you can use a try except statement to properly deal with the problem. An emergency halt will happen if you do not properly handle exceptions.
+
+
 
 
 
